@@ -7,6 +7,8 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { cn } from "@/lib/utils";
+import { buttonVariants } from "@/components/ui/button";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { CiMenuFries } from "react-icons/ci";
@@ -40,14 +42,20 @@ const MobileNav = () => {
         <SheetTitle className="sr-only">Navigation</SheetTitle>
 
         {/* Mobile Logo */}
-        <div className="mt-16 mb-12 text-center text-3xl font-semibold">
-          <Link href="/" onClick={handleCloseWithDelay}>
-            TheGoodAds
+        <div className="mt-16 mb-0 flex justify-center items-center">
+        <Link href="/" onClick={handleCloseWithDelay}>
+            <img
+              src="/logo-nobg.png"
+              alt="The GoodAds"
+              width={200}
+              height={200}
+              className="object-contain"
+            />
           </Link>
         </div>
 
         {/* Nav Links */}
-        <nav className="flex flex-col items-center gap-6">
+        <nav className="flex flex-col items-center gap-4">
           {navLinks.map((link, index) => {
             const isActive = pathname === link.path;
             return (
@@ -55,17 +63,17 @@ const MobileNav = () => {
                 key={index}
                 href={link.path}
                 onClick={handleCloseWithDelay}
-                className={`text-lg font-medium capitalize transition-colors ${
-                  isActive
-                    ? "text-primary border-b-2 border-primary"
-                    : "hover:text-primary"
-                }`}
+                className={cn(
+                  buttonVariants({ variant: "outline", size: "default" }),
+                  isActive ? "border-primary text-primary" : "hover:text-primary"
+                )}
               >
                 {link.name}
               </Link>
             );
           })}
         </nav>
+
 
         {/* Auth Buttons */}
         <div className="mt-10 flex flex-col items-center gap-3">
