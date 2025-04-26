@@ -34,7 +34,7 @@ const MobileNav = () => {
         onClick={() => setIsOpen(true)}
         className="flex justify-center items-center"
       >
-        <CiMenuFries className="text-[32px] text-primary" />
+        <CiMenuFries className="text-[32px] text-text" />
       </SheetTrigger>
 
       <SheetContent className="flex flex-col">
@@ -65,7 +65,7 @@ const MobileNav = () => {
                 onClick={handleCloseWithDelay}
                 className={cn(
                   buttonVariants({ variant: "outline", size: "default" }),
-                  isActive ? "border-primary text-primary" : "hover:text-primary"
+                  isActive ? "border-text text-white bg-text" : "hover:text-white"
                 )}
               >
                 {link.name}
@@ -78,13 +78,8 @@ const MobileNav = () => {
         {/* Auth Buttons */}
         <div className="mt-10 flex flex-col items-center gap-3">
           <Link href="/login" onClick={handleCloseWithDelay}>
-            <button className="w-40 py-2 border border-gray-300 rounded-full hover:bg-gray-100 transition">
-              Log In
-            </button>
-          </Link>
-          <Link href="/signup" onClick={handleCloseWithDelay}>
-            <button className="w-40 py-2 bg-primary text-white rounded-full hover:bg-primary/90 transition">
-              Sign Up
+            <button className="w-40 text-text py-2 border border-text rounded-full hover:bg-text hover:text-white transition">
+              Dashboard
             </button>
           </Link>
         </div>

@@ -66,12 +66,7 @@ const Header = () => {
           <div className="hidden lg:flex items-center gap-2">
             <Link href="/login">
               <Button variant="outline" size="default">
-                Log In
-              </Button>
-            </Link>
-            <Link href="/signup">
-              <Button variant="default" size="default">
-                Sign Up
+                Dashboard
               </Button>
             </Link>
           </div>
