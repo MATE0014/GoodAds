@@ -9,3 +9,4 @@ uv.lock
 .coverage
 alembic/versions/
 *.log
+shopno_notes.md
