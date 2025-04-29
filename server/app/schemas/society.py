@@ -45,6 +45,7 @@ class SocietyUpdate(SocietyBase):
     
 class Society(SocietyBase):
     id: int
+    owner_id: int
 
     class Config:
         orm_mode = True  # For Pydantic v1, use from_attributes=True for v2

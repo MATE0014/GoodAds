@@ -8,6 +8,7 @@ class Questions(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     question_text = Column(String, index=True)
+    choices = relationship("Choices", back_populates="question")
     
 class Choices(Base):
     __tablename__ = "choices"
@@ -27,4 +28,7 @@ class Society(Base):
     description = Column(Text, nullable=True)
     logo_url = Column(String(500), nullable=True)
     website_url = Column(String(500), nullable=True)
-    
+
+    owner_id = Column(Integer, ForeignKey("users.id"), nullable=False)
+
+    owner = relationship("User", backref="societies")
