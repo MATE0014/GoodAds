@@ -17,12 +17,12 @@
 
 ## 🔐 Authentication Setup
 
-- [ ] Decide on auth method (JWT, OAuth2, etc.)
-- [ ] Create user model/schema
-- [ ] Implement register endpoint
-- [ ] Implement login endpoint
-- [ ] Add password hashing
-- [ ] Generate and verify JWT tokens
+- [X] Decide on auth method (JWT, OAuth2, etc.)
+- [X] Create user model/schema
+- [X] Implement register endpoint
+- [X] Implement login endpoint
+- [X] Add password hashing
+- [X] Generate and verify JWT tokens
 - [ ] Middleware to protect routes
 - [ ] Add protected route test (e.g., `/me`)
 
