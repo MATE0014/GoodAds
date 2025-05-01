@@ -53,7 +53,7 @@ const handleMouseLeave = () => {
 const Header = () => {
   return (
     <header className="bg-white shadow-md px-6 py-4 flex items-center justify-between h-20">
-      {/* Logo */}
+      {/* Logo here */}
       <div className="flex items-center h-full pl-12">
         <Link href="/">
           <Image
@@ -66,8 +66,8 @@ const Header = () => {
         </Link>
       </div>
 
-      {/* Navbar */}
-      <nav className="hidden md:flex gap-6 text-[#15325a] text-lg font-medium font-inter">
+      {/* Navbar here */}
+      <nav className="hidden md:flex gap-6 text-[#15325a] text-lg font-medium font-outfit">
         <Link href="/">Home</Link>
 
         <Dropdown
@@ -104,11 +104,11 @@ const Header = () => {
         />
       </nav>
 
-      {/* Login/Signup Button */}
+      {/* Login/Signup buttons */}
       <div className="font-inter pr-12">
         <Link
           href="/login"
-          className="flex items-center gap-2 px-4 py-2 bg-accent text-white rounded-[4px] text-lg transition-colors"
+          className="flex font-outfit items-center gap-2 px-4 py-2 bg-accent text-white rounded-[4px] text-lg transition-colors"
         >
           Login / Signup
           <FiArrowRight size={16} />

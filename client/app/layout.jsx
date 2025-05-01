@@ -1,4 +1,4 @@
-import { Raleway, Inter } from "next/font/google";
+import { Raleway, Outfit } from "next/font/google";
 import "./globals.css";
 
 const raleway = Raleway({
@@ -7,10 +7,10 @@ const raleway = Raleway({
   variable: "--font-raleway",
 });
 
-const inter = Inter({
+const outfit = Outfit({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-  variable: "--font-inter",
+  variable: "--font-outfit",
 });
 
 export const metadata = {
@@ -20,7 +20,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${raleway.variable} ${inter.variable}`}>
+    <html lang="en" className={`${raleway.variable} ${outfit.variable}`}>
       <body>
         {children}
       </body>

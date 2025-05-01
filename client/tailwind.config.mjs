@@ -20,12 +20,13 @@ export default {
 	  },
 	  fontFamily: {
 		primary: "var(--font-raleway)",
-		inter: "var(--font-inter)",
+		outfit: "var(--font-outfit)",
 	  },
 	  extend: {
 		colors: {
 		  primary: "#93ccdd",
 		  text:"#1d365b",
+		  secondary: "#155e81",
 		  accent: {
 			DEFAULT: "#009ec9",
 			hover: "#719caa",
