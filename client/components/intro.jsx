@@ -1,52 +1,90 @@
 "use client";
 
-const Intro = () => {
+import Image from "next/image";
+
+export default function Intro() {
   return (
-    <div className="relative w-full h-[65vh] bg-[url('/intro-bg.jpg')] bg-cover bg-[center_5%] grid grid-cols-2 px-10">
-      {/* Color Overlay */}
-      <div className="absolute inset-0 bg-[rgba(99,195,221,0.61)] z-0" />
+    <section className="w-full py-16 bg-[#a8e0f0]">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          <div className="space-y-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1a5173]">
+              Welcome to
+              <br />
+              The GoodAds
+            </h1>
+            <p className="text-[#1a5173] text-lg max-w-xl">
+              We're building the future of brand collaborations! a vibrant marketplace where college societies meet
+              forward-thinking businesses to create innovative, niche-driven content.
+            </p>
 
-      {/* Content Layer */}
-      <div className="grid grid-rows-2 relative z-10 pt-0">
-        {/* Title */}
-        <h1 className="text-secondary text-6xl font-bold font-outfit leading-tight drop-shadow-[0_2px_2px_rgba(0,0,0,0.25)] pl-8 pt-8 m-0">
-          Welcome to <br /> The GoodAds
-        </h1>
+            <div className="flex items-center space-x-2 mt-8">
+              <div className="relative">
+                <div className="w-12 h-12 relative -top-4 left-0">
+                  <Image
+                    src="/earth illus.png"
+                    alt="Globe icon"
+                    width={50}
+                    height={50}
+                    className="object-contain"
+                  />
+                </div>
+              </div>
+              <div className="absolute">
+                <p className="text-[#1a5173] text-2xl md:text-3xl font-medium ml-4">
+                  For the <span className="text-white font-semibold drop-shadow-md">Creators</span>, By the{" "}
+                  <span className="text-white font-semibold drop-shadow-md">Creators</span>
+                </p>
+              </div>
+            </div>
+          </div>
 
-        {/* Description */}
-        <p className="text-[#197099] font-semibold text-2xl pl-8 pt-0 m-0">
-          We're building the future of brand collaborations — a vibrant marketplace where college societies meet forward-thinking businesses to create innovative, niche-driven content.
-        </p>
-      </div>
-
-      {/* Image Section (spanning 2 rows) */}
-      <div className="relative z-10 flex items-start justify-end row-span-2 m-0 p-0">
-        <img
-          src="/intro graphic.png"
-          alt="Intro Graphic"
-          className="w-[452px] h-[432px]"
-        />
-      </div>
-
-      {/* Third Row Section - Absolutely Positioned Tagline */}
-      <div className="absolute top-[327px] left-[236px] flex items-center z-20">
-        {/* Earth Icon */}
-        <img
-          src="/earth illus.png"
-          alt="Small Icon"
-          className="w-[95px] h-[95px] mr-4"
-        />
-
-        {/* Tagline */}
-        <div className="flex items-center space-x-2">
-          <span className="text-base text-secondary font-bold font-outfit">For The</span>
-          <span className="text-3xl font-extrabold text-white font-outfit">Creators</span>
-          <span className="text-base text-secondary font-bold font-outfit">, By The</span>
-          <span className="text-3xl font-extrabold text-white font-outfit">Creators</span>
+          <div className="flex justify-center lg:justify-end">
+            <div className="relative w-full max-w-md">
+              <Image
+                src="/intro graphic.png"
+                alt="Person pointing at screen with lightbulb"
+                width={400}
+                height={400}
+                className="object-contain"
+              />
+            </div>
+          </div>
         </div>
+        <div className="pt-8">
+              <p className="text-[#1a5173] font-extrabold mb-4">Trusted By:</p>
+              <div className="bg-[#8fd4e8] p-4 rounded-lg flex flex-wrap justify-between items-center gap-4">
+                <Image
+                  src="/iitk-logo.png"
+                  alt="IIT KANPUR"
+                  width={120}
+                  height={50}
+                  className="object-contain"
+                />
+                <Image
+                  src="/fc-logo.png"
+                  alt="FAST COMPANY"
+                  width={120}
+                  height={50}
+                  className="object-contain"
+                />
+                <Image
+                  src="/mit-logo.png"
+                  alt="MIT"
+                  width={80}
+                  height={50}
+                  className="object-contain"
+                />
+                <Image
+                  src="/forbes-logo.png"
+                  alt="Forbes"
+                  width={120}
+                  height={50}
+                  className="object-contain"
+                />
+              </div>
+            </div>
       </div>
-    </div>
-  );
-};
-
-export default Intro;
+    </section>
+  )
+}
