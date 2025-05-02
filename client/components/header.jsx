@@ -57,7 +57,7 @@ const Header = () => {
       <div className="flex items-center h-full pl-12">
         <Link href="/">
           <Image
-            src="/logo-nobg.png"
+            src="/logo/logo-nobg.png"
             alt="The GoodAds"
             width={100}
             height={100}
