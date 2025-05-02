@@ -50,3 +50,58 @@ good_ads_backend/
 
 DB Session management
 client -> FastAPI -> Depends(get_db) -> creates session -> uses -> closes after
+
+change that will allow you to create graphs inline using Mermaid syntax, for example:
+
+```mermaid
+flowchart TB
+ subgraph Frontend["Frontend"]
+    direction TB
+        NXApp["Next.js App"]
+        components["Various Components"]
+        configs["Configurations"]
+  end
+ subgraph Backend["Backend"]
+    direction TB
+        APIService["FastAPI Service"]
+        elements["Essential Elements"]
+  end
+ subgraph Database["Database"]
+    direction TB
+        DB["PostgreSQL Database"]
+        Alembic["Alembic Migrations"]
+  end
+ subgraph Infrastructure["Infrastructure"]
+    direction TB
+        Docker["Docker Configuration"]
+  end
+    NXApp --> components & configs
+    Browser["Browser (End User)"] -- HTTPS --> NXApp
+    APIService --> elements
+    NXApp -- REST API calls --> APIService
+    APIService -- SQLAlchemy --> DB
+    Alembic --> DB
+    Infrastructure --> Docker
+    Docker --> APIService & DB
+    Browser --> n1["Untitled Node"]
+
+     Browser:::frontend
+     NXApp:::frontend
+     components:::frontend
+     configs:::frontend
+     APIService:::backend
+     elements:::backend
+     DB:::db
+     Alembic:::backend
+     Docker:::infra
+    classDef frontend fill:#cce5ff,stroke:#333,stroke-width:1px
+    classDef backend fill:#d4edda,stroke:#333,stroke-width:1px
+    classDef db fill:#fff3cd,stroke:#333,stroke-width:1px
+    classDef infra fill:#f8d7da,stroke:#333,stroke-width:1px
+    click components "https://github.com/shopnobanerjee/the-good-ads/blob/main/client"
+    click configs "https://github.com/shopnobanerjee/the-good-ads/blob/main/client"
+    click elements "https://github.com/shopnobanerjee/the-good-ads/blob/main/server"
+    click DB "https://github.com/shopnobanerjee/the-good-ads/tree/main/server"
+    click Alembic "https://github.com/shopnobanerjee/the-good-ads/tree/main/server/alembic"
+    click Docker "https://github.com/shopnobanerjee/the-good-ads/tree/main/server"
+```
