@@ -1,5 +1,7 @@
 # app/db/base.py
 
-from app.db.base_class import Base  # 👈 from base_class
-from app import models  # 👈 just import models
-
+from app.db.base_class import Base
+from app.models.business import *
+from app.models.society import *
+from app.models.user import *
+from app.models.project import *

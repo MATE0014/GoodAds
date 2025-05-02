@@ -49,7 +49,9 @@ async def login( form_data: OAuth2PasswordRequestForm = Depends(), db: Session =
     if not security.verify_password(form_data.password, user.hashed_password):
         raise HTTPException(status_code=400, detail="Invalid credentials")
     
-    access_token = security.create_access_token(data={"sub": str(user.id)})
+    access_token = security.create_access_token(data={"sub": str(user.id),
+                                                      "user_type": str(user.user_type)
+                                                      })
     
     return {"access_token": access_token, "token_type": "bearer"}
 

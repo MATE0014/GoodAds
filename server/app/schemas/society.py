@@ -1,35 +1,7 @@
 # ...Pydantic Society schema...
 from pydantic import BaseModel
-from typing import List, Optional
-
-class ChoiceBase(BaseModel):
-    choice_text: str
-    is_correct: bool
-    
-class ChoiceCreate(ChoiceBase):
-    pass
-
-class Choice(ChoiceBase):
-    id: int
-    question_id: int
-    
-    class Config:
-        orm_mode = True  # For Pydantic v1, use from_attributes=True for v2
-    
-# Question schemas
-class QuestionBase(BaseModel):
-    question_text: str
-    
-class QuestionCreate(QuestionBase):
-    choices: List[ChoiceCreate]
-    
-class Question(QuestionBase):
-    id: int
-    choices: List[Choice] = []
-    
-    class Config:
-        orm_mode = True  # For Pydantic v1, use from_attributes=True for v2
-    
+from typing import Optional
+  
 # Society schemas
 class SocietyBase(BaseModel):
     name: str
@@ -48,4 +20,4 @@ class Society(SocietyBase):
     owner_id: int
 
     class Config:
-        orm_mode = True  # For Pydantic v1, use from_attributes=True for v2
+        from_attributes = True  # For Pydantic v1, use from_attributes=True for v2

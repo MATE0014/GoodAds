@@ -10,5 +10,5 @@ class User(Base):
     username = Column(String, unique=True, index=True, nullable=False)
     email = Column(String, unique=True, index=True, nullable=False)
     hashed_password = Column(String, nullable=False)
-    user_type = Column(String, nullable=False)  # 'business' or 'society'
+    user_type = Column(String, nullable=False)  # 'business', 'society', or 'admin'
     is_active = Column(Integer, default=1)
