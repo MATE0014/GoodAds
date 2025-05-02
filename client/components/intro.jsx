@@ -69,28 +69,28 @@ export default function Intro() {
           <p className="text-[#1a5173] text-2xl font-bold font-outfit mb-4">Trusted By:</p>
           <div className="bg-[#1A97BA80] p-4 rounded-lg flex flex-wrap justify-between items-center gap-4">
             <Image
-              src="/iitk-logo.png"
+              src="/logo/iitk-logo.png"
               alt="IIT KANPUR"
               width={120}
               height={50}
               className="object-contain"
             />
             <Image
-              src="/fc-logo.png"
+              src="/logo/fc-logo.png"
               alt="FAST COMPANY"
               width={120}
               height={50}
               className="object-contain"
             />
             <Image
-              src="/mit-logo.png"
+              src="/logo/mit-logo.png"
               alt="MIT"
               width={80}
               height={50}
               className="object-contain"
             />
             <Image
-              src="/forbes-logo.png"
+              src="/logo/forbes-logo.png"
               alt="Forbes"
               width={120}
               height={50}
