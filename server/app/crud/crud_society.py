@@ -5,6 +5,11 @@ from app.models.society import Society
 from app.schemas.society import SocietyCreate, SocietyUpdate
 
 async def create_society(db: AsyncSession, society: SocietyCreate, owner_id: int):
+    # Check if the owner already has a society
+    existing_society = await db.execute(select(Society).filter(Society.owner_id == owner_id))
+    if existing_society.scalars().first():
+        raise ValueError("Owner already has a society")
+
     new_society = Society(**society.dict(), owner_id=owner_id)
     db.add(new_society)
     await db.commit()

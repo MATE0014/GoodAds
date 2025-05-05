@@ -12,7 +12,12 @@ async def get_businesses(db: AsyncSession, skip: int = 0, limit: int = 10):
     return result.scalars().all()
 
 async def create_business(db: AsyncSession, business: BusinessCreate, owner_id: int):
-    db_business = Business(**business.dict(), owner_id=owner_id)
+    # Check if the owner already has a business
+    existing_business = await db.execute(select(Business).filter(Business.owner_id == owner_id))
+    if existing_business.scalars().first():
+        raise ValueError("Owner already has a business")
+
+    db_business = Business(**business.model_dump(), owner_id=owner_id)
     db.add(db_business)
     await db.commit()
     await db.refresh(db_business)
