@@ -57,7 +57,7 @@ const Header = () => {
       <div className="flex items-center h-full pl-12">
         <Link href="/">
           <Image
-            src="/logo/logo-nobg.png"
+            src="/logo/our-logo.png"
             alt="The GoodAds"
             width={100}
             height={100}
@@ -81,17 +81,8 @@ const Header = () => {
         <Dropdown
           title="Our Services"
           menuItems={[
-            { label: "Digital Marketing", href: "/services#marketing" },
-            { label: "SEO", href: "/services#seo" },
-            { label: "Design", href: "/services#design" },
-          ]}
-        />
-
-        <Dropdown
-          title="Our Blogs"
-          menuItems={[
-            { label: "Latest Posts", href: "/blogs" },
-            { label: "Case Studies", href: "/blogs#case-studies" },
+            { label: "College Societies", href: "/collegesocieties" },
+            { label: "Companies / Startups", href: "/businesses" },
           ]}
         />
 

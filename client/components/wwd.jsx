@@ -1,18 +1,19 @@
 "use client";
+import Link from "next/link";
 
 const wwd = () => {
   return (
     <section className="relative">
       {/* Bg img */}
       <div
-        className="absolute inset-0 bg-[url('/backgrounds/wwd-bg.jpg')] bg-cover bg-center opacity-80 pointer-events-none"
+        className="absolute inset-0 bg-[url('/backgrounds/wwd-bg.jpg')] bg-cover bg-center opacity-90 pointer-events-none"
         style={{ minHeight: '100%', height: '100%', width: '100%' }}
         aria-hidden="true"
       />
 
       {/* Component content */}
-      <div className="relative z-10 bg-text bg-opacity-90 text-white py-16 px-4 md:px-12">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-8 font-outfit">
+      <div className="relative z-10 bg-[#1679A8] bg-opacity-80 text-white py-16 pb-80 px-4 md:px-12">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-8 font-outfit drop-shadow-2xl">
           What We Do?
         </h2>
 
@@ -70,12 +71,42 @@ const wwd = () => {
         </div>
 
         {/* Our Services */}
-        <div className="mt-20">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-8 font-outfit">
+        <div className="mt-20 text-center">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 font-outfit text-white drop-shadow-2xl">
             Our Services To
           </h2>
+
+          <div className="relative mx-auto w-[982px] h-[424px]">
+            <div className="flex w-full h-full rounded-tl-[64px] rounded-tr-[64px] rounded-br-[233px] rounded-bl-[233px] shadow-[0px_4px_4px_5px_rgba(0,0,0,0.25)]">
+
+              {/* Left Half - College Societies */}
+              <Link
+                href="/college-societies"
+                className="w-1/2 bg-[#92d4e6] flex items-center justify-center hover:bg-[#e6f7fb] transition-colors duration-200 rounded-tl-[64px] rounded-bl-[233px] shadow-[10px_0px_5px_rgba(0,0,0,0.25)] z-10"
+              >
+                <div className="text-text text-5xl font-semibold font-outfit drop-shadow-2xl">
+                  College<br />Societies
+                </div>
+              </Link>
+
+              {/* Right Half - Companies/Startups */}
+              <Link
+                href="/companies-startups"
+                className="w-1/2 bg-[#A3DAEF] flex items-center justify-center hover:bg-[#e6f7fb] transition-colors duration-200 rounded-tr-[64px] rounded-br-[233px]"
+              >
+                <div className="text-text text-5xl font-semibold font-outfit drop-shadow-2xl">
+                  Companies/<br />Startups
+                </div>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
+      <img
+        src="/illustrations/comb standing.png"
+        alt="Decorative Overlay"
+        className="absolute bottom-0 left-1/2 -translate-x-1/2 z-50 w-[900px] h-[600px] pointer-events-none"
+      />
     </section>
   );
 };
