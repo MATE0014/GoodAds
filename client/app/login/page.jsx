@@ -5,45 +5,43 @@ import Link from "next/link";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
+import { z } from "zod";
+
+// Zod schema for login form
+const loginSchema = z.object({
+  email: z.string().email("Please enter a valid email address."),
+  password: z.string().min(8, "Password must be at least 8 characters."),
+});
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState("");
-  const [showPassword, setShowPassword] = useState(false);
   const [passwordError, setPasswordError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let valid = true;
 
-    // Email validation
-    if (!email.includes("@") || !email.includes(".com")) {
-      setEmailError("Please enter a valid email address.");
-      valid = false;
-    } else {
-      setEmailError("");
+    const result = loginSchema.safeParse({ email, password });
+
+    if (!result.success) {
+      const errors = result.error.flatten().fieldErrors;
+      setEmailError(errors.email?.[0] || "");
+      setPasswordError(errors.password?.[0] || "");
+      return;
     }
 
-    // Password validation
-    if (password.length < 8) {
-      setPasswordError("Password must be at least 8 characters.");
-      valid = false;
-    } else {
-      setPasswordError("");
-    }
-
-    if (!valid) return;
-
-    // On successful submit, console log and clear form
+    setEmailError("");
+    setPasswordError("");
     console.log({ email, password });
+
     setEmail("");
     setPassword("");
   };
 
-
   return (
-    <div className="min-h-screen grid grid-cols-12">
+    <div className="relative min-h-screen grid grid-cols-12 overflow-hidden">
       {/* Left Illus */}
       <div className="col-span-2 lg:col-span-3 -ml-3 hidden md:flex items-center justify-center bg-white">
         <Image
@@ -177,8 +175,10 @@ export default function LoginPage() {
         <Image
           src="/illustrations/login illus2.png"
           alt="img2"
-          width={1000}
+          width={1250}
           height={100}
+          className="absolute top-0 right-0 z-50 pointer-events-none"
+          priority
         />
       </div>
     </div>
