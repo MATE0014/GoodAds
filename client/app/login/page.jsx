@@ -59,8 +59,8 @@ export default function LoginPage() {
           <Image
             src="/logo/our-logo.png"
             alt="Logo"
-            width={140}
-            height={85}
+            width={150}
+            height={150}
             className="object-contain"
           />
         </div>

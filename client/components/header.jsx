@@ -58,9 +58,9 @@ const Header = () => {
         <Link href="/">
           <Image
             src="/logo/our-logo.png"
-            alt="The GoodAds"
-            width={100}
-            height={100}
+            alt="inHalt"
+            width={150}
+            height={150}
             className="object-contain"
           />
         </Link>
